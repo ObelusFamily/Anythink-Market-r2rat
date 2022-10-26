@@ -41,6 +41,7 @@ class Item extends React.Component {
     const markup = {
       __html: marked(this.props.item.description, { sanitize: true }),
     };
+
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
