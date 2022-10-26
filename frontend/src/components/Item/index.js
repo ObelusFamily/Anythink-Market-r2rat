@@ -41,6 +41,10 @@ class Item extends React.Component {
     const markup = {
       __html: marked(this.props.item.description, { sanitize: true }),
     };
+
+    if(this.props.item.image==="") {
+      this.props.item.image="/placeholder.png";
+    }
     const canModify =
       this.props.currentUser &&
       this.props.currentUser.username === this.props.item.seller.username;
